@@ -15,6 +15,7 @@ const DATA = [
 ];
 
 export default function App() {
+
   const renderCard = item => {
     return (
       <Card
@@ -37,11 +38,29 @@ export default function App() {
     );
   }
 
+  const renderNoMoreCards = cb => {
+    return (
+      <Card title="All done!">
+        <Text style={{ marginBottom: 30, textAlign: 'center' }}>
+          No more content left!
+        </Text>
+        <Button
+          onPress={cb}
+          icon={{ name: 'refresh', color: 'white' }}
+          buttonStyle={{
+            backgroundColor: '#099cec'
+          }}
+        />
+      </Card>
+    );
+  }
+
   return (
     <View style={styles.container}>
       <Deck
         data={DATA}
         renderCard={renderCard}
+        renderNoMoreCards={renderNoMoreCards}
       />
     </View>
   );
@@ -54,5 +73,5 @@ const styles = StyleSheet.create({
     paddingTop: 40,
     //alignItems: 'center',
     //justifyContent: 'center',
-  },
+  }
 });
