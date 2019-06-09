@@ -21,14 +21,17 @@ export default function App() {
         key={item.id}
         title={item.text}
         image={{ uri: item.uri }}
+        containerStyle={{borderColor: "#d1d5da", borderWidth: 1, borderRadius: 0}}
       >
         <Text style={{marginBottom: 10}}>
           Card text...
         </Text>
         <Button
-          icon={{ name: 'code' }}
-          backgroundColor="#0070f3"
+          //icon={{ name: 'code' }}
           title="This is a button!"
+          buttonStyle={{
+            backgroundColor: '#099cec'
+          }}
         />
       </Card>
     );
