@@ -26,6 +26,7 @@ const Deck = ({data, renderCard, onSwipeLeft, onSwipeRight}) => {
 
   const [panResponder, setPanResponder] = useState(pr);
   const [position, setPosition] = useState(pos);
+  const [index, setIndex] = useState(0);
 
   const resetPosition = () => {
     Animated.spring(position, {
@@ -34,6 +35,7 @@ const Deck = ({data, renderCard, onSwipeLeft, onSwipeRight}) => {
   }
 
   const onSwipeComplete = (direction) => {
+    const item = data[index];
     direction === 'right' ? onSwipeRight() : onSwipeLeft();
   }
 
